@@ -1,6 +1,8 @@
 
 print("Welcome to Story Generator!")
-Choice_for_questions = "Would you like to run all the questions or just one?"
+All_answer = ["All", "all", "ALL", "All questions", "all questions", "ALL QUESTIONS"]
+Single_answer = ["Single", "single", "SINGLE", "One"]
+Choice_for_questions = input("Would you like to run all the questions or just one?")
 print(Choice_for_questions)
 # All the list information
 Genre_list = ["Horror", "Sci-fi", "Comedy", "Thriller", "Drama", "Fantasy", "Action", "Crime"]
