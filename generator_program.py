@@ -54,35 +54,23 @@ def challenge():
 
 # Single question function
 def single_question():
+
     choice_list = ["Type of genre (type genre)", "Type of main character (type main_cha)", "Amount of main character (type num_cha)", "Type of ending (type end)"]
-    print(choice_list)
+    question_choice = input("Pick which question you would like to run")
     choice = [genre_choice(), main_cha_choice(), num_cha_choice(), end_choice()]
-    user_choice = input("Pick which question you would like to run")
-    while True:
-        if user_choice == "genre":
-            choice[0]()
 
-        else:
-            print("pick choice from list")
+    if question_choice == "genre":
+        choice[0]()
+    elif question_choice == "main_cha":
+        choice[1]()
+    elif question_choice == "num_cha":
+        choice[2]()
+    elif question_choice == "end":
+        choice[3]()
 
-        if user_choice == "main_cha":
-            choice[1]()
-
-        else:
-            print("Pick choice from list")
-
-        if user_choice == "num_cha":
-            choice[2]()
-
-        else:
-            print("Pick choice from list")
-
-        if user_choice == "end":
-            choice[3]()
-
-        else:
-            print("Pick choice from list")
-            return genre_choice, main_cha_choice, num_cha_choice, end_choice
+    else:
+        print("Pick choice from list")
+    return genre_choice, main_cha_choice, num_cha_choice, end_choice
 
 
 def genre_choice():
