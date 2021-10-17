@@ -58,10 +58,11 @@ def single_question():
     choice_list = ["Type of genre (type genre)", "Type of main character (type main_cha)", "Amount of main character (type num_cha)", "Type of ending (type end)"]
     question_choice = input("Pick which question you would like to run")
     choice = [genre_choice(), main_cha_choice(), num_cha_choice(), end_choice()]
-
+    print(question_choice)
     if question_choice == "genre":
         choice[0]()
     elif question_choice == "main_cha":
+        print(choice[1])
         choice[1]()
     elif question_choice == "num_cha":
         choice[2]()
