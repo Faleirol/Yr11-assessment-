@@ -163,7 +163,7 @@ if Choice_for_questions.lower() in All_answer:
     User_end, User_genre, User_main, User_num = all_question()
 elif Choice_for_questions in Single_answer:
     print("Single function")
-    genre_choice, main_cha_choice, num_cha_choice, end_choice, question_choice = single_question()
+    genre_choice(), main_cha_choice, num_cha_choice, end_choice, question_choice, single_question()
 
 else:
     print("Pick the 2 options")
