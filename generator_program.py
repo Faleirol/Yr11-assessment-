@@ -126,7 +126,7 @@ else:
 challenge()
 
 if Choice_for_questions == All_answer:
-    print(f"Genre:, {User_genre} \n")
+    print(f"Genre:, {genre} \n" f"Main character:, {main_character} \n")
 else:
     print(question_choice)
 
