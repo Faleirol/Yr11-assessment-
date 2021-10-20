@@ -1,3 +1,4 @@
+# version 2 branch
 # all the questions function
 def all_question():
     genre_answer = ["Horror", "horror", "HORROR", "Sci-fi", "sci-fi", "SCI-FI", "sci fi", "Sci fi", "SCI FI", "Comedy",
