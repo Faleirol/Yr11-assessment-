@@ -27,11 +27,11 @@ def single_question():
     if question_choice == "genre":
         single_ans1 = choice[0]()
     elif question_choice == "main_cha":
-        choice[1]()
+        single_ans1 = choice[1]()
     elif question_choice == "num_cha":
-        choice[2]()
+        single_ans1 = choice[2]()
     elif question_choice == "end":
-        choice[3]()
+        single_ans1 = choice[3]()
 
     else:
         print("Pick choice from list")
@@ -113,7 +113,7 @@ if Choice_for_questions.lower() in All_answer:
     main_character = main_cha_choice()
     num_char = num_cha_choice()
     ending = end_choice()
-    print(genre, main_character, num_char, ending)
+    print(f"Genre: {genre} \n Main character: {main_character} \n Amount of side characters: {num_char} \n  Type of ending: {ending} \n")
 elif Choice_for_questions in Single_answer:
     print("Single function")
     single_ans = single_question()
@@ -124,10 +124,5 @@ else:
 
 
 challenge()
-
-if Choice_for_questions == All_answer:
-    print(f"Genre:, {genre} \n" f"Main character:, {main_character} \n")
-else:
-    print(question_choice)
 
 print("Enjoy writing!")
