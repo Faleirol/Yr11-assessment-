@@ -1,6 +1,7 @@
 # version 2 branch
 # all the questions function
 
+Generator_Ans = []
 
 # Challenge function
 def challenge():
@@ -101,26 +102,36 @@ def end_choice():
 
 # main code
 global question_choice
-
+Choice_for_questions = 0
 print("Welcome to Story Generator!")
-All_answer = ["All", "all", "ALL", "All questions", "all questions", "ALL QUESTIONS"]
-Single_answer = ["Single", "single", "SINGLE", "one"]
-Choice_for_questions = input("Would you like to run all the questions or just one?")
-print(Choice_for_questions)
-if Choice_for_questions.lower() in All_answer:
-    print("All function")
-    genre = genre_choice()
-    main_character = main_cha_choice()
-    num_char = num_cha_choice()
-    ending = end_choice()
-    print(f"Genre: {genre} \n Main character: {main_character} \n Amount of side characters: {num_char} \n  Type of ending: {ending} \n")
-elif Choice_for_questions in Single_answer:
-    print("Single function")
-    single_ans = single_question()
-    print(single_ans)
+print("Do you want to answer all questions or a single question?")
+print("Press 1 for all\nPress 2 for single\nPress 3 to quit")
 
-else:
-    print("Pick the 2 options")
+
+while Choice_for_questions != 1 or Choice_for_questions != 2:
+    try:
+        Choice_for_questions = int(input("Enter your choice [1 or 2]"))
+        if Choice_for_questions == 1 :
+            print("All function")
+            genre = genre_choice()
+            main_character = main_cha_choice()
+            num_char = num_cha_choice()
+            ending = end_choice()
+            print(
+                f"Genre: {genre} \n Main character: {main_character} \n Amount of main characters: {num_char} \n  Type of ending: {ending} \n")
+
+        elif Choice_for_questions == 2:
+            print("Single function")
+            single_ans = single_question()
+            Generator_Ans.append(single_ans)
+            print(Generator_Ans)
+            challenge()
+    except ValueError:
+        print("Enter an option from the list [1 or 2]")
+
+
+
+
 
 
 challenge()
