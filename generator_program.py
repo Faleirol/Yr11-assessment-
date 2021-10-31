@@ -3,7 +3,7 @@
 
 Generator_Ans = []
 
-# Challenge function
+# Challenge function - this function ask the user if they want to do a challenge if yes it will pick a random number to have the user write that amount of chapters
 def challenge():
     import random
     dice = random.randint(1, 10)
@@ -100,7 +100,7 @@ def end_choice():
     return end_choice
 
 
-# main code
+# main code - This is where all the functions are called and where in program they ask which function to run (single or all) then ask if they want to run the challenge function
 global question_choice
 Choice_for_questions = 0
 print("Welcome to Story Generator!")
@@ -110,8 +110,8 @@ print("Press 1 for all\nPress 2 for single\nPress 3 to quit")
 
 while Choice_for_questions != 1 or Choice_for_questions != 2:
     try:
-        Choice_for_questions = int(input("Enter your choice [1 or 2]"))
-        if Choice_for_questions == 1 :
+        Choice_for_questions = int(input("Enter your choice [1 or 2] to quit press 3"))
+        if Choice_for_questions == 1:
             print("All function")
             genre = genre_choice()
             main_character = main_cha_choice()
@@ -126,8 +126,9 @@ while Choice_for_questions != 1 or Choice_for_questions != 2:
             Generator_Ans.append(single_ans)
             print(Generator_Ans)
             challenge()
+
     except ValueError:
-        print("Enter an option from the list [1 or 2]")
+        print("Press 1 for all\nPress 2 for single\nPress 3 to quit")
 
 
 
