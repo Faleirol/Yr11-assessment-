@@ -3,6 +3,7 @@
 
 Generator_Ans = []
 
+
 # Challenge function - this function ask the user if they want to do a challenge if yes it will pick a random number to have the user write that amount of chapters
 def challenge():
     import random
@@ -18,12 +19,13 @@ def challenge():
 
 # Single question function - the user is able to choose a specific function to run from the list. The answer is returned to single_ans1
 def single_question():
-    global question_choice
-    choice_list = ["Type of genre (type genre)", "Type of main character (type main_cha)",
+    # noinspection PyGlobalUndefined
+    global question_choice, single_ans1
+    choice_list = ["Type of genre (Genre)", "Type of main character (type main_cha)",
                    "Amount of main character (type num_cha)", "Type of ending (type end)"]
     print(choice_list)
     question_choice = input("Pick which question you would like to run")
-    choice = [genre_choice, main_cha_choice, num_cha_choice, end_choice]
+    choice = [genre, main_cha, num_cha, end_fun]
     print(question_choice)
     if question_choice == "genre":
         single_ans1 = choice[0]()
@@ -40,7 +42,7 @@ def single_question():
     pass
 
 
-def genre_choice():
+def genre():
     genre_answer = ["Horror", "horror", "HORROR", "Sci-fi", "sci-fi", "SCI-FI", "sci fi", "Sci fi", "SCI FI", "Comedy",
                     "comedy", "COMEDY", "Thriller", "thriller", "THRILLER", "Drama", "drama", "DRAMA", "Fantasy",
                     "fantasy", "FANTASY", "Action", "action", "ACTION", "Crime", "crime", "CRIME"]
@@ -54,7 +56,7 @@ def genre_choice():
     return genre_choice
 
 
-def main_cha_choice():
+def main_cha():
     main_character_list = ["Criminal", "Hero", "Villain", "Teenager", "Mythical character", "Alien", "Human", "Animal"]
     print(main_character_list)
     main_answer = ["Criminal", "criminal", "CRIMINAL", "Hero", "hero", "HERO", "Villain", "villain", "VILLAIN",
@@ -68,7 +70,7 @@ def main_cha_choice():
     return main_cha_choice
 
 
-def num_cha_choice():
+def num_cha():
     num_character_list = ["1 character", "A duo", "3 character", "A group (4+)"]
     print(num_character_list)
     num_answer = ["1 character", "one character", "One Character", "One character", " ONE CHARACTER", "1 CHARACTER",
@@ -83,7 +85,7 @@ def num_cha_choice():
     return num_cha_choice
 
 
-def end_choice():
+def end_fun():
     ending_list = ["Happy ending", "Sad ending", "Cliffhanger ending", "Abrupt ending", "Plot twist ending"]
     print(ending_list)
     end_answer = ["Happy ending", "happy ending", "Happy Ending", "HAPPY ENDING", "Happy", "happy", "HAPPY",
@@ -107,19 +109,18 @@ print("Welcome to Story Generator!")
 print("Do you want to answer all questions or a single question?")
 print("Press 1 for all\nPress 2 for single\nPress 3 to quit")
 
-
-while Choice_for_questions != 1 or Choice_for_questions != 2:
+while Choice_for_questions != 1 or Choice_for_questions != 2 or Choice_for_questions != 3:
     try:
         Choice_for_questions = int(input("Enter your choice [1 or 2] to quit press 3"))
         if Choice_for_questions == 1:
             print("All function")
-            genre = genre_choice()
-            main_character = main_cha_choice()
-            num_char = num_cha_choice()
-            ending = end_choice()
+            genre = genre()
+            main_character = main_cha()
+            num_char = num_cha()
+            ending = end_fun()
             print(
                 f"Genre: {genre} \n Main character: {main_character} \n Amount of main characters: {num_char} \n  Type of ending: {ending} \n")
-
+            challenge()
         elif Choice_for_questions == 2:
             print("Single function")
             single_ans = single_question()
@@ -127,14 +128,8 @@ while Choice_for_questions != 1 or Choice_for_questions != 2:
             print(Generator_Ans)
             challenge()
 
+        elif Choice_for_questions == 3:
+            print("Enjoy writing!")
+            quit()
     except ValueError:
         print("Press 1 for all\nPress 2 for single\nPress 3 to quit")
-
-
-
-
-
-
-challenge()
-
-print("Enjoy writing!")
