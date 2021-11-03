@@ -4,7 +4,8 @@
 Generator_Ans = []
 
 
-# Challenge function - this function ask the user if they want to do a challenge if yes it will pick a random number to have the user write that amount of chapters
+# Challenge function - Option to set up a challenge for the user.
+# By using random library to select a value from 1 to 10
 def challenge():
     import random
     dice = random.randint(1, 10)
@@ -18,6 +19,7 @@ def challenge():
 
 
 # Single question function - the user is able to choose a specific function to run from the list. The answer is returned to single_ans1
+# By using if statement to run the function that the user asked for
 def single_question():
     # noinspection PyGlobalUndefined
     global question_choice, single_ans1
@@ -27,6 +29,7 @@ def single_question():
     question_choice = input("Pick which question you would like to run")
     choice = [genre, main_cha, num_cha, end_fun]
     print(question_choice)
+    #If selection to run the required function
     if question_choice == "genre":
         single_ans1 = choice[0]()
     elif question_choice == "main_cha":
@@ -41,7 +44,8 @@ def single_question():
     return single_ans1
     pass
 
-
+# This function ask the user what genre they like to do
+# by taking user input and storing in genre_choice
 def genre():
     genre_answer = ["Horror", "horror", "HORROR", "Sci-fi", "sci-fi", "SCI-FI", "sci fi", "Sci fi", "SCI FI", "Comedy",
                     "comedy", "COMEDY", "Thriller", "thriller", "THRILLER", "Drama", "drama", "DRAMA", "Fantasy",
@@ -55,7 +59,8 @@ def genre():
     print("Data stored")
     return genre_choice
 
-
+# This function ask the user what main character they like
+# by taking user input and storing in main_cha_choice
 def main_cha():
     main_character_list = ["Criminal", "Hero", "Villain", "Teenager", "Mythical character", "Alien", "Human", "Animal"]
     print(main_character_list)
@@ -69,7 +74,8 @@ def main_cha():
     print("Data stored")
     return main_cha_choice
 
-
+# This function ask the user what amount of characters they like
+# by taking user input and storing in num_cha_choice
 def num_cha():
     num_character_list = ["1 character", "A duo", "3 character", "A group (4+)"]
     print(num_character_list)
@@ -84,7 +90,8 @@ def num_cha():
     print("Data stored")
     return num_cha_choice
 
-
+# This function ask the user what type of ending they like
+# by taking user input and storing in end_choice
 def end_fun():
     ending_list = ["Happy ending", "Sad ending", "Cliffhanger ending", "Abrupt ending", "Plot twist ending"]
     print(ending_list)
@@ -102,7 +109,8 @@ def end_fun():
     return end_choice
 
 
-# main code - This is where all the functions are called and where in program they ask which function to run (single or all) then ask if they want to run the challenge function
+# main code - This is where all the functions are called and user input of which function to run
+# By using a while statement,if statement to run right function and try statement to ensure no error happens
 global question_choice
 Choice_for_questions = 0
 print("Welcome to Story Generator!")
